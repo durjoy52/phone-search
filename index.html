@@ -14,17 +14,30 @@
     />
   </head>
   <body>
-    <h2 class="text-center my-3">Search Your Favorite Phone 📱</h2>
-    <div class="input-area w-75 m-auto">
-            
-        <div class="input-group mb-3">
-            <input id="search-box" type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-              <span class="btn btn-secondary input-group-text" id="search-btn">Search
-            </div>
+       <!-- header start -->
+       <header>
+        <h2 class="text-center my-3">Search Your Favorite Phone 📱</h2>
+        <div class="input-area w-75 m-auto">
+                
+            <div class="input-group mb-3">
+                <input id="search-box" type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+                <div class="input-group-append">
+                  <span onclick="searchResult()" class="btn btn-secondary input-group-text" id="search-btn">Search
+                </div>
+              </div>
+              
+        </div>
+       </header>
+       <!-- details card  -->
+       <div class="details-banner m-auto">
+           
+       </div>
+
+       <!-- main start  -->
+       <main class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4" id="cards-container">
           </div>
-          
-    </div>
+       </main>
     <!-- script link  -->
     <script src="app.js"></script>
     <!-- Bootstrap script  -->
