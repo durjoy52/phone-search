@@ -1,18 +1,25 @@
+// spinner 
 const spinner = style =>{
   document.getElementById('spinner').style.display = style;
 }
+// clear result 
  const clearSearchResult = idName =>{
   const clearResult = document.getElementById(idName)
   clearResult.textContent =''
  }
+
+ const showOnOf = (idName,show) => {
+ document.getElementById(idName).style.display = show
+ }
+//  search result 
 const searchResult = () =>{
   const searchBox = document.getElementById('search-box');
   const searchValue = searchBox.value;
   searchBox.value =''
   if(searchValue == '' || !isNaN(searchValue)){
-    document.getElementById('massage').style.display ='block'
+    showOnOf('massage','block')
   }else{
-    document.getElementById('massage').style.display ='none'
+    showOnOf('massage','none')
     spinner('block')
     const url =`https://openapi.programming-hero.com/api/phones?search=${searchValue}`;
     fetch(url)
@@ -26,8 +33,13 @@ const searchResult = () =>{
 
 const displayAllPhone = mobiles =>{
     const cardsContainer = document.getElementById('cards-container')
+    showOnOf('massage2','none')
     clearSearchResult('cards-container')
     clearSearchResult('details-banner')
+    if(mobiles.length == 0){
+      showOnOf('massage2','block')
+    }else
+    showOnOf('massage2','none')
     for(const mobile of mobiles.slice(0,20)){
         const div =document.createElement('div')
         div.classList.add('col')
