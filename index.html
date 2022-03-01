@@ -15,28 +15,35 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
+ 
+  <body  class="container">
        <!-- header start -->
        <header>
-        <h2 class="text-center my-3">Search Your Favorite Phone 📱</h2>
+        <h2 class="text-center my-3 text-primary">Search Your <span id="blue">Favorite Phone</span> 📱</h2>
         <div class="input-area w-75 m-auto">
                 
             <div class="input-group mb-3">
-                <input id="search-box" type="text" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+                <input id="search-box" type="search" class="form-control" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
                 <div class="input-group-append">
-                  <span onclick="searchResult()" class="btn btn-secondary input-group-text" id="search-btn">Search
+                  <span onclick="searchResult()" class="btn btn-success input-group-text" id="search-btn">Search
                 </div>
               </div>
               
         </div>
        </header>
-       
+       <h4 class="text-center text-danger" id="massage">please type phone name</h4>
+       <div class="d-flex justify-content-center">
+        <button id="spinner" class="btn btn-primary" type="button" disabled>
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          Loading...
+        </button>
+       </div>
        <!-- details card  -->
        <div id="details-banner" class="mb-3">
 
        </div>
        <!-- main start  -->
-       <main class="container">
+       <main>
            <!-- search results  -->
         <div class="row row-cols-1 row-cols-md-3 g-4" id="cards-container">
           </div>
