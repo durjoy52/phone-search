@@ -1,18 +1,16 @@
-// spinner 
-const spinner = style =>{
-  document.getElementById('spinner').style.display = style;
-}
+
 // clear result 
  const clearSearchResult = idName =>{
   const clearResult = document.getElementById(idName)
   clearResult.textContent =''
  }
-
+//  massage generator
  const showOnOf = (idName,show) => {
  document.getElementById(idName).style.display = show
  }
 //  search result 
 const searchResult = () =>{
+  showOnOf('massage2','none')
   const searchBox = document.getElementById('search-box');
   const searchValue = searchBox.value;
   searchBox.value =''
@@ -33,7 +31,6 @@ const searchResult = () =>{
 
 const displayAllPhone = mobiles =>{
     const cardsContainer = document.getElementById('cards-container')
-    showOnOf('massage2','none')
     clearSearchResult('cards-container')
     clearSearchResult('details-banner')
     if(mobiles.length == 0){
@@ -61,12 +58,12 @@ const displayAllPhone = mobiles =>{
         `
         cardsContainer.appendChild(div)
     }
-    spinner('none')
+    showOnOf('spinner','none')
 }
 
 //  more info by item id 
 const moreDetails = itemId =>{
-  spinner('block')
+  showOnOf('spinner','block')
   const url = `https://openapi.programming-hero.com/api/phone/${itemId}`
   fetch(url)
   .then(res => res.json())
@@ -120,5 +117,5 @@ for(const item in items){
   span.innerHTML = `<strong>${item}:</strong> ${items[item]}, `
   others.appendChild(span) 
 }
-spinner('none')
+showOnOf('spinner','none')
 }
